@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>БE3HOГNM</title>
+  
+  <script>
+    var number = Math.floor(Math.random() * 100);
+    var filename = number + '.mp3';
+    var audio = new Audio(filename);
+    audio.play();
+
+    function compareReload() {
+      var answer = document.getElementById("answer").value.toString();
+      var isSuccessful = (answer == number) ? "Да":"Нет";
+  
+      document.getElementById("out").innerHTML = isSuccessful + ', ' + number;
+
+      setTimeout(function() { location.reload() }, (Math.floor(Math.random() * 600) + 300) * 500);            
+      return false;
+    }
+      
+  </script>
+
+</head>
+
+<body>
+  <form id="checker" onSubmit="return compareReload();" method="get">
+    <input type="text" id="answer" autofocus>
+    <button type="submit">Сколько?</button>
+  </form>
+  <p id="out"></p>
+</body>
+</html>
