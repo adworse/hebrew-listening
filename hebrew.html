@@ -2,32 +2,47 @@
 <head>
   <meta charset="utf-8">
   <title>БE3HOГNM</title>
-  
-  <script>
-    var number = Math.floor(Math.random() * 100);
-    var filename = number + '.mp3';
-    var audio = new Audio(filename);
-    audio.play();
-
-    function compareReload() {
-      var answer = document.getElementById("answer").value.toString();
-      var isSuccessful = (answer == number) ? "Да":"Нет";
-  
-      document.getElementById("out").innerHTML = isSuccessful + ', ' + number;
-
-      setTimeout(function() { location.reload() }, (Math.floor(Math.random() * 600) + 300) * 300);            
-      return false;
-    }
-      
-  </script>
-
 </head>
 
 <body>
-  <form id="checker" onSubmit="return compareReload();" method="get">
-    <input type="text" id="answer" autofocus>
+  <form id="checker" onSubmit="return compareReload();">
+    <input type="text" id="answer" autofocus placeholder="42">
     <button type="submit">Сколько?</button>
   </form>
   <p id="out"></p>
+  
+  <script>
+    var out = document.getElementById('out');
+    var input = document.getElementById("answer");
+    var number;
+    var filename;
+    var audio;
+    
+    function generateNumber() {
+      number = Math.floor(Math.random() * 100).toString();
+      filename = number + '.mp3';
+    }
+    
+    function playAudio() {
+      audio = new Audio(filename);
+      audio.play();
+    }
+    
+    function restart() {
+      input.value = '';
+      generateNumber();
+      playAudio();
+    }
+
+    function compareReload() {
+      var isSuccessful = input.value == number ? "Да" : "Нет";
+      out.innerHTML = isSuccessful + ', ' + number;
+      setTimeout(restart, (Math.floor(Math.random() * 600) + 300) * 300);            
+      return false;
+    }
+    
+    restart()
+      
+  </script>
 </body>
 </html>
