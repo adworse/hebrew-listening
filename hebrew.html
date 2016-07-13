@@ -12,6 +12,7 @@
   <p id="out"></p>
   
   <script>
+    var delayMultiplicator = 300
     var out = document.getElementById('out');
     var input = document.getElementById("answer");
     var number;
@@ -38,7 +39,7 @@
     function compareReload() {
       var isSuccessful = input.value == number ? "Да" : "Нет";
       out.innerHTML = isSuccessful + ', ' + number;
-      setTimeout(restart, (Math.floor(Math.random() * 600) + 300) * 300);            
+      setTimeout(restart, (Math.floor(Math.random() * 600) + 300) * delayMultiplicator);            
       return false;
     }
     
