@@ -1,7 +1,7 @@
 # Ивритский счёт
 Браузер говорит число на иврите, а вы угадываете. Раз-два — и рынок Кармель падает к ногам.
 
-Распакуйте архив отсюда https://yadi.sk/d/Btb35Y-MtF4Hf и положите hebrew.html в распакованную папку. Потом откройте hebrew.html в браузере, и он станет время от времени разговаривать.
+Распакуйте архив отсюда https://yadi.sk/d/Btb35Y-MtF4Hf и положите файл https://raw.githubusercontent.com/adworse/hebrew-listening/master/hebrew.html в распакованную папку. Потом откройте hebrew.html в браузере, и он станет время от времени разговаривать.
 
 simple browser tool for listening skills trainig
 
