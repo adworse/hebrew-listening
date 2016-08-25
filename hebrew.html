@@ -34,12 +34,12 @@
       out.innerHTML = '';
       generateNumber();
       playAudio();
+      setTimeout(restart, (Math.floor(Math.random() * 600) + 300) * delayMultiplicator);
     }
 
     function compareReload() {
       var isSuccessful = input.value == number ? "Да" : "Нет";
       out.innerHTML = isSuccessful + ', ' + number;
-      setTimeout(restart, (Math.floor(Math.random() * 600) + 300) * delayMultiplicator);            
       return false;
     }
     
